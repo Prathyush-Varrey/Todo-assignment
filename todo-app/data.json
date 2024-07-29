@@ -1,0 +1,22 @@
+{
+  "todos": [
+    {
+      "id": "2",
+      "task": "Example Task 2",
+      "desc": "Another example task description",
+      "read": false
+    },
+    {
+      "id": "6dfe",
+      "task": "Todo 1",
+      "desc": "todo1 Desc",
+      "read": false
+    },
+    {
+      "id": "2b86",
+      "task": "Go To GYM",
+      "desc": "Go to gym by 9'o clock today",
+      "read": false
+    }
+  ]
+}
