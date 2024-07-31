@@ -37,7 +37,7 @@ export default function CreateTodo() {
       const newTodo = { task, desc, read: false };
       axios.post('http://localhost:3001/todos', newTodo)
         .then(response => {
-          setTodos([...todos, response.data]);
+          setTodos([response.data, ...todos]);
           setTask("");
           setDesc("");
         })
@@ -105,10 +105,11 @@ return (
 <div className="p-4">
           {/* Taking Task name as Input */}
           <div className="mb-4">
-               <label className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2" htmlFor="taskName">
+               <label className="block text-gray-900 dark:text-gray-300 text-sm font-bold mb-2" htmlFor="taskName">
                     Task Name
                </label>
-               <input type="text" value={task} onChange={handleTaskChange} name="taskName" id="taskName" placeholder="Enter Your Task" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline" />
+               <input type="text" value={task} onChange={handleTaskChange} name="taskName" id="taskName" placeholder="Enter Your Task"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-900 leading-tight focus:outline-none focus:shadow-outline" />
           </div>
 
           {/* Taking Description as Input */}
@@ -117,7 +118,7 @@ return (
                     Task Description
                </label>
                <input type="text" value={desc} onChange={handleDescChange} name="taskDescription" id="taskDescription" placeholder="Enter Your Task Description"
-                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline" />
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-900 leading-tight focus:outline-none focus:shadow-outline" />
           </div>
 
           {/* Search Todos implementation */}
@@ -126,7 +127,7 @@ return (
                     Search Todos
                </label>
                <input type="text" value={searchQuery} onChange={handleSearchQueryChange} name="searchQuery" id="searchQuery"
-                    placeholder="Search Todos" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline" />
+                    placeholder="Search Todos" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-900 leading-tight focus:outline-none focus:shadow-outline" />
           </div>
 
           {/* Add todo / Update Todo  implementation*/}
